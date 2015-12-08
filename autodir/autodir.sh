@@ -12,7 +12,9 @@ dname="${predname}-${2}"
 current="$outputdir/$dname"
 mkdir "$current"
 
-for file in index.php script.js; do
+for file in index.html script.js; do
     touch "$current/$file"
 done
+echo "$(cat scriptTemplate.js)" >> $current/script.js
+echo "$(cat htmlTemplate.html)" >> $current/index.html
 cd "--"
